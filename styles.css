@@ -1,0 +1,354 @@
+
+:root {
+    --primary-color: #6B46C1;
+    --text-color: #2D3748;
+    --background-color: #F7FAFC;
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    min-height: 100vh;
+}
+
+.navbar {
+   
+    border: 2px solid var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    max-width: 100vw; /* Prevent content from exceeding viewport */
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-right {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap; /* Ensure wrapping in smaller screens */
+}
+
+.nav-right a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+/* Overall Grid Layout */
+.main-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* Left (tabs and content) takes 2 parts, right (images) takes 1 part */
+    gap: 1rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    /* background-color: #FF0080; */
+}
+
+/* Left Section: Tabs and Content */
+.tabs-content {
+    
+    display: grid;
+    grid-template-rows: auto 1fr; /* Tabs on top, content below */
+    gap: 1rem;
+}
+
+/* Tabs Styles */
+.tabs {
+    display: flex;
+    gap: 1rem;
+    justify-content: start;
+    align-items: center;
+    padding: 1rem;
+    background-color: transparent;
+    margin: 0 0;
+}
+
+.tab {
+    text-decoration: none; /* Remove the underline */
+    padding: 0.5rem 1rem;
+    border: 1px solid #E2E8F0; /* Light border around each tab */
+    border-radius: 4px; /* Rounded corners for tabs */
+    background: white;
+    font-size: 1rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all var(--transition-speed) ease-in-out;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+}
+
+
+.tab:hover {
+    text-decoration: none; /* Ensure no underline on hover */
+    background: #F3F4F6; 
+    color: var(--text-color);
+}
+
+.tab.active {
+    text-decoration: none; /* No underline for the active tab */
+    background-color: var(--primary-color);
+    color: white;
+}
+
+
+/* Content Layout */
+.content {
+    display: grid;
+    grid-template-columns: 3f4r 1fr;
+    gap: 2rem;
+}
+
+.featured-article {
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.article-text {
+    padding-top: 10%;
+    position: relative;
+    padding-left: 1rem;
+}
+.article-text h2 {
+    font-family: 'Impact', 'Arial Black', sans-serif; /* Use bold sans-serif fonts */
+    font-size: 2rem; /* Adjust font size */
+    font-weight: 900; /* Extra bold */
+    color: #2D3748; /* Text color */
+    line-height: 1.3; /* Adjust line height for spacing */
+    word-wrap: break-word; /* Ensures long words wrap properly */
+    margin-bottom: 1rem; /* Space below the heading */
+}
+
+
+.article-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #FF0080;
+    border-radius: 2px;
+}
+
+.article-text h2 {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+    color: #2D3748;
+}
+
+.authorBox {
+    margin-top: 9rem;
+}
+
+.author, .date {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+/* Right Section: Image Grid */
+.image-grid {
+    margin-top: 2rem;
+    padding: auto;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.image-item img {
+    
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .main-grid{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .navbar{
+        padding: 1rem 2rem;
+    }
+    
+
+    .nav-right {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-speed) ease-in-out;
+    }
+
+    .nav-right.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-right a {
+        width: 100%;
+        padding: 0.5rem 1rem;
+    }
+
+    .tabs-content {
+        grid-template-columns: 1fr; /* Stack content and tabs on smaller screens */
+    }
+
+    .featured-article {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .image-grid {
+        display: flex;
+        flex-direction: column; /* Stack images vertically */
+    }
+
+    .tabs {
+        display: flex;
+        gap: 1rem;
+        padding: 1rem;
+        background-color: none;
+        margin: 1rem auto;
+        max-width: 1200px;
+        width: calc(100% - 2rem);
+        box-sizing: border-box;
+        justify-content: center; /* Center-align the tabs */
+    }
+
+    .tab {
+        min-height: 3rem;
+        padding: 0.5rem 1rem;
+        border: 1px solid #E2E8F0;
+        border-radius: 4px;
+        background: white;
+        font-size: 1rem;
+        color: var(--text-color);
+        cursor: pointer;
+        transition: all var(--transition-speed) ease-in-out;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .tab.active {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .content {
+        padding: 0 0.5rem;
+    }
+}
+
+.paragraph-container {
+    background-color: #f9f9f9; /* Light gray background */
+    border: 1px solid #e2e8f0; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 1.5rem; /* Internal spacing */
+    margin: 1rem auto; /* Center alignment with vertical margin */
+    max-width: 800px; /* Limit the width for better readability */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add slight shadow */
+    font-family: 'Arial', sans-serif; /* Clean font */
+    font-size: 1.1rem; /* Slightly larger text for readability */
+    line-height: 1.8; /* Increase line spacing */
+    color: #2d3748; /* Dark gray text color */
+}
+
+.paragraph-container h2 {
+    font-size: 1.5rem; /* Larger heading */
+    margin-bottom: 0.5rem; /* Space between heading and paragraph */
+    color: #4a5568; /* Slightly lighter gray */
+    text-align: center; /* Center align the heading */
+    font-weight: bold; /* Make it stand out */
+}
+
+.paragraph-container p {
+    text-align: justify; /* Justify text for a clean look */
+    margin: 0; /* Reset margin */
+}
+
+@media (max-width: 768px) {
+    .paragraph-container {
+        padding: 1rem; /* Adjust padding for smaller screens */
+        font-size: 1rem; /* Reduce font size slightly */
+    }
+}
