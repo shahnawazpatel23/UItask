@@ -1,10 +1,7 @@
-// popular.js
-
-// Fetch data from the backend
 fetch('/data.php')
-  .then((response) => response.json()) // Parse the JSON response
+  .then((response) => response.json()) 
   .then((data) => {
-    // Update the paragraph content
+   
     const paragraphElement = document.getElementById('certification-paragraph');
     paragraphElement.textContent = data.paragraph;
   })

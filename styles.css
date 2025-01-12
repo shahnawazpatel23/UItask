@@ -16,7 +16,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
     background-color: var(--background-color);
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden; 
     min-height: 100vh;
 }
 
@@ -34,7 +34,7 @@ body {
     top: 0;
     z-index: 1000;
     width: 100%;
-    max-width: 100vw; /* Prevent content from exceeding viewport */
+    max-width: 100vw; 
 }
 
 .nav-left {
@@ -54,7 +54,7 @@ body {
     display: flex;
     gap: 2rem;
     align-items: center;
-    flex-wrap: wrap; /* Ensure wrapping in smaller screens */
+    flex-wrap: wrap; 
 }
 
 .nav-right a {
@@ -78,10 +78,10 @@ body {
     cursor: pointer;
 }
 
-/* Overall Grid Layout */
+
 .main-grid {
     display: grid;
-    grid-template-columns: 3fr 1fr; /* Left (tabs and content) takes 2 parts, right (images) takes 1 part */
+    grid-template-columns: 3fr 1fr; 
     gap: 1rem;
     width: 100%;
     max-width: 1200px;
@@ -91,15 +91,15 @@ body {
     /* background-color: #FF0080; */
 }
 
-/* Left Section: Tabs and Content */
+
 .tabs-content {
     
     display: grid;
-    grid-template-rows: auto 1fr; /* Tabs on top, content below */
+    grid-template-rows: auto 1fr; 
     gap: 1rem;
 }
 
-/* Tabs Styles */
+
 .tabs {
     display: flex;
     gap: 1rem;
@@ -108,36 +108,38 @@ body {
     padding: 1rem;
     background-color: transparent;
     margin: 0 0;
+    /* background-color: #FF0080; */
 }
 
 .tab {
-    text-decoration: none; /* Remove the underline */
+    text-decoration: none; 
     padding: 0.5rem 1rem;
-    border: 1px solid #E2E8F0; /* Light border around each tab */
-    border-radius: 4px; /* Rounded corners for tabs */
+    border: 1px solid #E2E8F0; 
+    border-radius: 4px; 
     background: white;
     font-size: 1rem;
     color: var(--text-color);
     cursor: pointer;
     transition: all var(--transition-speed) ease-in-out;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+    /* background-color: #FF0080; */
 }
 
 
 .tab:hover {
-    text-decoration: none; /* Ensure no underline on hover */
+    text-decoration: none;
     background: #F3F4F6; 
     color: var(--text-color);
 }
 
 .tab.active {
-    text-decoration: none; /* No underline for the active tab */
+    text-decoration: none; 
     background-color: var(--primary-color);
     color: white;
 }
 
 
-/* Content Layout */
+
 .content {
     display: grid;
     grid-template-columns: 3f4r 1fr;
@@ -209,7 +211,7 @@ body {
     object-fit: cover;
 }
 
-/* Right Section: Image Grid */
+
 .image-grid {
     margin-top: 2rem;
     padding: auto;
@@ -228,7 +230,6 @@ body {
 }
 
 
-/* Responsive styles for smaller screens */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -270,7 +271,7 @@ body {
     }
 
     .tabs-content {
-        grid-template-columns: 1fr; /* Stack content and tabs on smaller screens */
+        grid-template-columns: 1fr; 
     }
 
     .featured-article {
@@ -281,7 +282,7 @@ body {
 
     .image-grid {
         display: flex;
-        flex-direction: column; /* Stack images vertically */
+        flex-direction: column; 
     }
 
     .tabs {
@@ -293,7 +294,7 @@ body {
         max-width: 1200px;
         width: calc(100% - 2rem);
         box-sizing: border-box;
-        justify-content: center; /* Center-align the tabs */
+        justify-content: center; 
     }
 
     .tab {
@@ -320,35 +321,34 @@ body {
 }
 
 .paragraph-container {
-    background-color: #f9f9f9; /* Light gray background */
-    border: 1px solid #e2e8f0; /* Subtle border */
-    border-radius: 8px; /* Rounded corners */
-    padding: 1.5rem; /* Internal spacing */
+    background-color: #f9f9f9; 
+    border: 1px solid #e2e8f0; 
+    border-radius: 8px; 
+    padding: 1.5rem; 
     margin: 1rem auto; /* Center alignment with vertical margin */
-    max-width: 800px; /* Limit the width for better readability */
+    max-width: 800px; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add slight shadow */
     font-family: 'Arial', sans-serif; /* Clean font */
-    font-size: 1.1rem; /* Slightly larger text for readability */
+    font-size: 1.1rem; 
     line-height: 1.8; /* Increase line spacing */
-    color: #2d3748; /* Dark gray text color */
+    color: #2d3748; 
 }
 
 .paragraph-container h2 {
-    font-size: 1.5rem; /* Larger heading */
-    margin-bottom: 0.5rem; /* Space between heading and paragraph */
-    color: #4a5568; /* Slightly lighter gray */
-    text-align: center; /* Center align the heading */
-    font-weight: bold; /* Make it stand out */
+    font-size: 1.5rem; 
+    margin-bottom: 0.5rem; 
+    color: #4a5568; 
+    text-align: center; 
+    font-weight: bold;
 }
 
 .paragraph-container p {
-    text-align: justify; /* Justify text for a clean look */
-    margin: 0; /* Reset margin */
-}
+    text-align: justify; 
+    margin: 0; }
 
 @media (max-width: 768px) {
     .paragraph-container {
-        padding: 1rem; /* Adjust padding for smaller screens */
-        font-size: 1rem; /* Reduce font size slightly */
+        padding: 1rem; 
+        font-size: 1rem; 
     }
 }
